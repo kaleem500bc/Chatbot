@@ -20,8 +20,8 @@ It provides flask api which is used to convert voice to text. It uses pretrained
 config.yaml defines parameter for the project. It defines port number for the flask API. Also contains information for the work in progress.
 
 ## Execution
-Execute deploy_proj.sh to run the project.
-**OR**
+Execute deploy_proj.sh to run the project. <br>
+**OR**<br>
 Execute following commands in terminal
 ```bash
 # modules directories

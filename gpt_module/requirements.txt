@@ -1,0 +1,5 @@
+torch==2.0.1
+transformers
+Flask
+Flask-SQLAlchemy
+PyYAML

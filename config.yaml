@@ -1,0 +1,22 @@
+experiments: chatbot
+version: v1
+
+database_uri: sqlite:///chatbotHistory.db
+
+whisper:
+  deployment: whisper_deployment
+  service: whisper_service
+  image: localhost:5000/whisper
+  port: 5002
+
+gpt:
+  deployment: gpt_deployment
+  service: gpt_service
+  image: localhost:5000/gpt
+  port: 5001
+
+react_deployment: react_deployment
+react_service: react_service
+
+node_server_deployment: node_server_deployment
+node_server_service: node_server_service

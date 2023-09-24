@@ -1,9 +1,9 @@
 #!/bin/bash
 
-declare -a modules=("gpt_module" "frontend" "node_server" "whisper_module")
+declare -a _modules=("gpt_module" "frontend" "node_server" "whisper_module")
 
 # copy config.yaml to each module
-for module in "${modules[@]}"
+for module in "${_modules[@]}"
 do 
     cp config.yaml $module
 done

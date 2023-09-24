@@ -21,3 +21,19 @@ config.yaml defines parameter for the project. It defines port number for the fl
 
 ## Execution
 Execute deploy_proj.sh to run the project.
+**OR**
+Execute following commands in terminal
+```bash
+# modules directories
+declare -a _modules=("gpt_module" "frontend" "node_server" "whisper_module")
+
+# copy config.yaml to each module
+for module in "${_modules[@]}"
+do 
+    cp config.yaml $module
+done
+
+(cd gpt_module && python flask_api.py)
+(cd whisper_module && python flask_api.py)
+(cd frontend && npm start)
+```

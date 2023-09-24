@@ -33,7 +33,8 @@ do
     cp config.yaml $module
 done
 
+# run each module in background
 (cd gpt_module && python flask_api.py)
 (cd whisper_module && python flask_api.py)
-(cd frontend && npm start)
+(cd frontend && npm start &)
 ```

@@ -38,3 +38,11 @@ done
 (cd whisper_module && python flask_api.py)
 (cd frontend && npm start &)
 ```
+
+## Author
+
+Kaleem
+
+## Contact
+
+For questions or inquiries, please contact via [email](mailto:Kaleem500bc@gmail.com).

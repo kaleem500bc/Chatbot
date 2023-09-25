@@ -34,8 +34,8 @@ do
 done
 
 # run each module in background
-(cd gpt_module && python flask_api.py)
-(cd whisper_module && python flask_api.py)
+(cd gpt_module && python flask_api.py &)
+(cd whisper_module && python flask_api.py &)
 (cd frontend && npm start &)
 ```
 

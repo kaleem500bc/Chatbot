@@ -10,18 +10,24 @@ This project is a versatile chatbot that can handle both text and voice inputs. 
 
 - **Chat History:** The chatbot keeps a history of conversations, allowing you to load previous interactions for reference.
 
-## Instal dependencies
+## Install dependencies & Execute the web app
 Install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
-
-
-## Execute the web app
+**Execute the web app**
 ```bash
 python manage.py runserver
 ```
-Access the chatbot interface by opening a web browser and navigating to **http://localhost:8000**
+<br/>
+
+**OR Deploy andd access in container**
+```bash
+docker build -t chatbot_django .
+docker run -p 8000:8000 chatbot_django
+```
+
+For both method, access the chatbot interface by opening a web browser and navigating to **http://localhost:8000**
 
 ## Usage
 1. **Text Input:**

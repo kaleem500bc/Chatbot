@@ -1,6 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from django.template import loader
-from django_manager.models import History
+from chatbot_django.models import History
 import json
 
 from chatbot.members.promptresponsegpt import *

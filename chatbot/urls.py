@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from django_manager.views import *
+from chatbot_django.views import *
 
 urlpatterns = [
     path('loadHistory/', load_history, name='load_history'),

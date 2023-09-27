@@ -2,9 +2,9 @@
 from channels.generic.websocket import AsyncJsonWebsocketConsumer as AWC
 from asgiref.sync import sync_to_async
 import json
-from django_manager.views import generate_gpt_response
+from chatbot_django.views import generate_gpt_response
 from chatbot.members.promptresponsegpt import *
-from django_manager.models import History
+from chatbot_django.models import History
 
 
 class GPTResponseConsumer(AWC):

@@ -14,7 +14,7 @@ from chatbot.routing import websocket_urlpatterns
 from channels.security.websocket import AllowedHostsOriginValidator
 from channels.auth import AuthMiddlewareStack
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_manager.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatbot_django.settings')
 
 from channels.routing import ProtocolTypeRouter, URLRouter
 

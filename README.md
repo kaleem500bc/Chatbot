@@ -21,7 +21,7 @@ python manage.py runserver
 ```
 <br/>
 
-**OR Deploy andd access in container**
+**OR Deploy and access in container**
 ```bash
 docker build -t chatbot_django .
 docker run -p 8000:8000 chatbot_django

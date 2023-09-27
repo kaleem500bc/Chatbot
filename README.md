@@ -12,9 +12,9 @@ This project is a versatile chatbot that can handle both text and voice inputs. 
 
 ## Instal dependencies
 Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 
 
 ## Execute the web app

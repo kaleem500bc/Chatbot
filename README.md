@@ -41,4 +41,4 @@ For both method, access the chatbot interface by opening a web browser and navig
     - The chatbot's response for the transcribed audio will appear in the lower bottom text area.
 3. **Chat History:** 
     - Click the "History..." button to load the chat history.
-    - Previous interactions will appear in the "GPT Response" text area.
+    - Previous interactions will appear in the below this button.

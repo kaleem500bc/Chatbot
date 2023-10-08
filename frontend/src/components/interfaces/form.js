@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GPTEndpoint } from '../scripts/gpt_request.js';
+import { GPTEndpoint, LoadHistory} from '../scripts/gpt_request.js';
 import { Recording } from '../scripts/recording.js';
 // import RecordingClass from './recording.js';
 
@@ -41,30 +41,6 @@ const Form = () => {
     height: '229.461px',
   };
 
-
-//   const loadHistory = () => {
-//     fetch(load_history, {
-//         method: 'POST',
-//         body: JSON.stringify({"history_idx": history_idx}),
-//         headers: {
-//             'X-Requested-With':'XMLHttpRequest'
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         if (data.count > 0){
-//             historyPanel_with_title = document.getElementById('historyPanel');
-//             if (historyPanel_with_title.children.length > 6) {
-//                 historyPanel_with_title.removeChild(historyPanel_with_title.children[1]);
-//             }
-//             historyNode = `<textarea style='width: 100%;height: 10%;border-radius: 10px;border-width: 1px;border-color: var(--bs-link-hover-color);'>${data.history}</textarea>`;
-//             historyPanel_with_title.insertAdjacentHTML("beforeend", historyNode);
-//             setHistory_idx(history_idx + 1);
-//         }
-//     })
-//   };
-
-
   return (
     <form id="gpt_response_form" method="post">
       <div className="row">
@@ -89,7 +65,7 @@ const Form = () => {
           </div>
         </div>
         <div id="historyPanel" name="historyPanel" className="col" style={historyPanelStyle}>
-          <button className="btn btn-primary" id="loadHistory" type="button">History...</button>
+          <button onClick={LoadHistory} className="btn btn-primary" id="loadHistory" type="button">History...</button>
         </div>
       </div>
     </form>

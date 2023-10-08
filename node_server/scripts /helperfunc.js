@@ -1,5 +1,7 @@
 
-const updateHistoryPanel = async (gpt_response) => {
+const gptResponseShowAddElement = (gpt_response) => {
+    //when the data is recieved from the server then the gpt response is updated
+    document.getElementById('gpt_response').value = gpt_response;
     var historyPanel_with_title = document.getElementById('historyPanel');
     var historyPanel = historyPanel_with_title.children[0];
     var historyNode = `<textarea style='width: 100%;height: 10%;border-radius: 10px;border-width: 1px;border-color: var(--bs-link-hover-color);'>${gpt_response}</textarea>`;
@@ -31,8 +33,8 @@ const init_media_recorder = async () => {
 
         const audio_transcribed_text = await response.json();
         document.getElementById("input_text").innerHTML = audio_transcribed_text.whisper_response;
-        document.getElementById("gpt_response").innerHTML = audio_transcribed_text.gpt_response;
-        updateHistoryPanel(audio_transcribed_text.gpt_response);
+        // document.getElementById("gpt_response").innerHTML = audio_transcribed_text.gpt_response;
+        gptResponseShowAddElement(audio_transcribed_text.gpt_response);
         recorded_chunks = [];
 
     });
@@ -47,4 +49,4 @@ const init_media_recorder = async () => {
     return media_recorder;
 };
 
-export {updateHistoryPanel, init_media_recorder};
+export {gptResponseShowAddElement, init_media_recorder};

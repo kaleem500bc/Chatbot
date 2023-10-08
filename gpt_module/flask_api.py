@@ -31,7 +31,7 @@ class ChatbotHistory(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route("/", methods=["POST"])
+@app.route("/gpt", methods=["POST"])
 def get_gpt_response():
     user_input = request.get_json()["input_text"]
     generated_text = gpt_module.generate_text(user_input)
@@ -44,7 +44,7 @@ def get_gpt_response():
 def load_history():
     idx = request.get_json()["index"]
     entry = ChatbotHistory.query.order_by(desc(ChatbotHistory.id)).offset(idx-1).first()
-    return jsonify({"history": entry})
+    return jsonify({"history": entry.generated_text})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port= config["port"])

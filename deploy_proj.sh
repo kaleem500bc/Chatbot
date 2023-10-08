@@ -8,9 +8,10 @@ do
     cp config.yaml $module
 done
 
-(cd gpt_module && python flask_api.py)
-(cd whisper_module && python flask_api.py)
-(cd frontend && npm start)
+(cd gpt_module && python flask_api.py &)
+(cd whisper_module && python flask_api.py &)
+(cd node_server && npm start &)
+(cd frontend && npm start &)
 
 # # For using docker
 # # build docker image for each module

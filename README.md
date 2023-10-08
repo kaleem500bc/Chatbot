@@ -4,7 +4,7 @@ Deploy each module in separate pod and use kubernetes service to communicate bet
 # Chatbot
 Integrate whisper and GPT module for voice recognistion and text generation. 
 React Frontend
-Express (for routing and using endpoints)
+Express server (for routing and using endpoints/ API)
 Flask GPT API
 FLask Whisper API
 

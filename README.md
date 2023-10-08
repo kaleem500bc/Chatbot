@@ -37,6 +37,10 @@ do
     cp config.yaml $module
 done
 
+# install dependencies for each module
+(cd frontend && npm install)
+(cd node_server && npm install)
+
 # run each module in background
 (cd gpt_module && python flask_api.py &)
 (cd whisper_module && python flask_api.py &)

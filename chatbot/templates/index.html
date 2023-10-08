@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="width: 100%;height: 100%;">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Projects-Grid-images.css' %}">
+</head>
+
+<body style="width: 100%;height: 100%;">
+    <div class="container row-cols-auto" style="width: 100%;max-width: 100%;height: 100%;max-height: 100%;padding-right: 0px;padding-left: 0px;">
+        <div class="row" style="width: 110%;height: 10%;">
+            <div class="col" style="width: 100%;height: 100%;padding-right: 0px;padding-left: 0px;">
+                <section style="max-width: 100%;width: 130%;margin: inherit;padding-bottom: 0px;height: 100%;border-radius: 0px;">
+                    <div class="container" style="/*width: 992px;*/max-width: 100%;height: 100%;">
+                        <div class="text-start text-white bg-dark border rounded border-0" style="height: 100%;">
+                            <h2 class="fw-bold text-white" style="width: 100%;max-width: 100%;height: 100%;margin-bottom: 0px;margin-top: -1px;margin-left: 2px;padding-top: 17px;padding-bottom: 0px;padding-left: 37px;">&nbsp;Chatbot: Text and Voice</h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <form id="gpt_response_form" method="post">
+                <div class="row">
+                    <div class="col-lg-8 col-auto" style="width: 100%;padding-right: 0px;padding-left: 0px;">
+                        <div class="row" style="margin-top: 10px;margin-left: 15%;width: 50%;">
+                            <div class="col-lg-12 col-md-12" style="height: 229.461px;"><textarea id="input_text" name="input_text" placeholder="Please type here..." style="width: 100%;height: 100%;border-radius: 10px;border-width: 1px;border-color: var(--bs-link-hover-color);"></textarea></div>
+                        </div>
+                        <div class="row" style="margin-top: 10px;margin-left: 15%;width: 50%;">
+                            <div class="col col-md-12" style="height: 229.461px;"><textarea id="gpt_response" placeholder="GPT Response will appear here." name="gpt_response" style="width: 100%;height: 100%;border-radius: 10px;border-width: 1px;border-color: var(--bs-link-hover-color);"></textarea></div>
+                        </div>
+                        <div class="row" style="margin-top: 10px;margin-left: 15%;width: 50%;">
+                            <div class="col col-md-12" style="height: 229.461px;">
+                                <div class="btn-group" role="group"><button class="btn btn-primary" id="submit" type="submit">Submit</button><button class="btn btn-primary" id="start_stop_rec" type="button" style="margin-left: 1px;">Rec</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="historyPanel" name="historyPanel" class="col" style="width: 25%;padding-right: 0px;padding-left: 0px;max-width: 25%;margin-left: -30%;margin-top: 11px;">
+                       <button id="loadHistory" class="btn btn-primary" type="button">History...</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+
+    <script>
+        const gpt_response_form_action = "{% url 'gpt_response'%}";
+        const whisper_transcribe_action = "{% url 'whisper_model_transcribe' %}";
+        const load_history = "{% url 'load_history' %}";
+    </script>
+    <script src="{% static 'load_history.js' %}"></script>
+    <script src="{% static 'gpt_response_ajax.js' %}"></script>
+    <script src="{% static 'voice_record.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
